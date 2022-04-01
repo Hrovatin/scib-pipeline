@@ -8,7 +8,7 @@ quiet <- FALSE
 
 installed <- as.data.table(installed.packages())
 
-RcppAnnoy
+# #TODO add BiocManager::install("batchelor")
 
 # packages <- data.table(
 #   package = c('RcppAnnoy', #'Seurat', 
