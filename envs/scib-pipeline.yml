@@ -2,6 +2,7 @@ name: scib-pipeline
 channels:
   - conda-forge
   - bioconda
+  - anaconda 
 dependencies:
   - python
   - pip

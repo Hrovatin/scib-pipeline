@@ -1,3 +1,4 @@
+<!-- #region -->
 # Pipeline for benchmarking atlas-level single-cell integration
 
 This repository contains the snakemake pipeline for our benchmarking study for data integration tools.
@@ -140,7 +141,7 @@ conda deactivate
 . envs/set_vars.sh $conda_prefix
 ```
 
-Activate the environment and install the packages all the R dependencies in R directly or use the script `install_R_methods.R`.
+Activate the environment and install the packages all the R dependencies in R directly or use the script `install_R_methods.R`. - UNUSED in out czi atlas envs - instead manually install in R below:
 
 ```commandline
 conda activate <r-environment>
@@ -149,7 +150,13 @@ Rscript envs/install_R_methods.R
 
 For the installation of`Conos`, please see [the Conos github repo](https://github.com/hms-dbmi/conos).
 
+For czi atlas envs:
+```
+BiocManager::install("batchelor")
+```
+
 We used these conda versions of the R integration methods in our study:
+
 
 ```
 harmony_1.0
@@ -226,3 +233,4 @@ Tools that are compared include:
 - [DESC](https://github.com/eleozzr/desc)
 - [LIGER](https://github.com/MacoskoLab/liger)
 - [SAUCIE](https://github.com/KrishnaswamyLab/SAUCIE)
+<!-- #endregion -->
