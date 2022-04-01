@@ -118,6 +118,11 @@ conda activate <py-environment>
 Rscript -e "devtools::install_github('theislab/kBET')"
 ```
 
+If Seurat can not be loaded in R run again 
+```
+install.packages('KernSmooth')
+```
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |

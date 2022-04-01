@@ -9,10 +9,24 @@ quiet <- FALSE
 installed <- as.data.table(installed.packages())
 
 packages <- data.table(
-  package = c('RcppAnnoy', 'Seurat', 'welch-lab/liger', 'kharchenkolab/conos',
-              'kharchenkolab/conosPanel', 'immunogenomics/harmony'),
-  version = c('0.0.14', '3.1.1', '0.5.0', '1.3.0', NA, NA),
-  how = c('version', 'version', 'github', 'github', 'github')
+  package = c('RcppAnnoy', #'Seurat', 
+              #'welch-lab/liger', 
+              #'kharchenkolab/conos', #'kharchenkolab/conosPanel', 
+              #'immunogenomics/harmony',
+              #"ScaledMatrix",
+              #"LTLA/batchelor"),
+  version = c('0.0.14', #'4.0.6', 
+              #'0.5.0', 
+              #'1.3.0', NA, 
+              #'0.1.0',
+              #'NA',
+              #'NA'),
+  how = c('version', #'version', 
+          #'github', 
+          #'github', 'github',
+          #'github',
+          #'BioC',
+          #'remotes_github')
 )
 # 'batchelor', NA, 'BioC'
 
@@ -39,7 +53,10 @@ for (pckg_name in packages$package) {
     } else if (how == 'github') {
       package_string <- ifelse(is.na(version), package, paste(package, version, sep = '@'))
       devtools::install_github(package_string, quiet = quiet)
-    } else {
+    } else if (how == 'remotes_github') {
+      package_string <- ifelse(is.na(version), package, paste(package, version, sep = '@'))
+      remotes::install_github(package_string, quiet = quiet)
+    }else {
       stop(pckg_name, ' cannot be installed via: ', how)
     }
     message(paste("installed", package))

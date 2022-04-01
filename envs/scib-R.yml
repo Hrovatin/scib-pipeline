@@ -4,7 +4,7 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
-  - r-base=3.6.0
+  - r-base
   - r-essentials
   - gsl
   - r-optparse
@@ -15,8 +15,10 @@ dependencies:
   # Seurat dependencies
   - bioconductor-multtest
   - r-sdmtools
+  - r-seurat==4.1.0
+  - r-harmony==0.1.0
   # batchelor
-  - bioconductor-batchelor
+  #- bioconductor-batchelor==1.9.1
   # Liger dependencies
   - openjdk
   - r-hdf5r
