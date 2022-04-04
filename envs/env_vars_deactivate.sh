@@ -29,6 +29,6 @@ unset R_LIBS_OLD
 
 # +
 # Reset R libs
-#R_LIBS_USER=$R_LIBS_USER_OLD
-#export $R_LIBS_USER
-#unset R_LIBS_USER_OLD
+R_LIBS_USER=$R_LIBS_USER_OLD
+export $R_LIBS_USER
+unset R_LIBS_USER_OLD
