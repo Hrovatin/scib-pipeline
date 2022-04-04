@@ -31,7 +31,7 @@ dependencies:
   - r-seurat==4.1.0
   - r-KernSmooth
   # Needed for bbknn
-  - numba==0.50.1 # Before was set to lower for mnnpy
+  - numba==0.52.0 # Before was set to lower for mnnpy
   - pip:
     - scanorama==1.7.2
     - scib==1.0.1
