@@ -124,6 +124,8 @@ If Seurat can not be loaded in R run again
 install.packages('KernSmooth')
 ```
 
+Alo check that R package scater was installed properly.
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
