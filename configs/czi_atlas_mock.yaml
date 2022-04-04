@@ -1,6 +1,6 @@
-ROOT: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/mock
-r_env : scIB-R
-py_env : scIB-pipeline
+ROOT: /storage/groups/ml01/workspace/karin.hrovatin/data/czi_tissue_references/data/mock/scib
+r_env : scib-R
+py_env : scib-pipeline
 timing: false
 
 unintegrated_metrics: false
@@ -16,29 +16,29 @@ METHODS: # method name : output type(s)
     output_type:
       - embed
       - full
-  seuratrpca:
-    R: true
-    output_type: full
-  harmony:
-    R: true
-    output_type: embed
-  bbknn:
-    output_type: knn
-  scvi:
-    no_scale: true
-    output_type: embed
-  scgen:
-    output_type: full
-    use_celltype: true
-  scanvi:
-    output_type: embed
-    no_scale: true
-    use_celltype: true
-  fastmnn:
-    R: true
-    output_type:
-      - embed
-      - full
+#  seuratrpca:
+#    R: true
+#    output_type: full
+#  harmony:
+#    R: true
+#    output_type: embed
+#  bbknn:
+ #   output_type: knn
+ # scvi:
+ #   no_scale: true
+ #   output_type: embed
+ # scgen:
+ #   output_type: full
+ #   use_celltype: true
+ # scanvi:
+ #   output_type: embed
+ #   no_scale: true
+#    use_celltype: true
+#  fastmnn:
+#    R: true
+#    output_type:
+#      - embed
+#      - full
 
 DATA_SCENARIOS:
   10_1038_s41591_020_0944_y:
@@ -46,6 +46,6 @@ DATA_SCENARIOS:
     label_key: cell_type
     organism: human
     assay: expression
-    file: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/mock/10_1038_s41591_020_0944_y/mock_subset.h5ad
+    file: /storage/groups/ml01/workspace/karin.hrovatin/data/czi_tissue_references/data/mock/10_1038_s41591_020_0944_y/mock_subset.h5ad
 
 

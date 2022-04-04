@@ -12,6 +12,10 @@ include: "scripts/integration/Snakefile"
 include: "scripts/metrics/Snakefile"
 include: "scripts/visualization/Snakefile"
 
+rule integrate_temp:
+    input:
+       rules.integration.input
+
 rule all:
     input:
         rules.integration.input,
