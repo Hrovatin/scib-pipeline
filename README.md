@@ -117,6 +117,7 @@ Once environment variables have been set, you can install `kBET`:
 conda activate <py-environment>
 Rscript -e "devtools::install_github('theislab/kBET')"
 ```
+Make sure you have rpy2==3.4.2
 
 ### R environments
 
