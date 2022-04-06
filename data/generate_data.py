@@ -25,6 +25,9 @@ def get_adata_rand_batch(pca=False, n_top_genes=None, neighbors=False):
     adata.layers['counts'] = adata.X
     sc.pp.filter_cells(adata, min_counts=1)
     sc.pp.filter_genes(adata, min_counts=1)
+    
+    sc.pp.normalize_total(adata, target_sum=10e6, exclude_highly_expressed=True)
+    sc.pp.log1p(adata)
 
     scib.preprocessing.reduce_data(
         adata,
