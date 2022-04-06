@@ -123,7 +123,13 @@ If Seurat can not be loaded in R run again
 ```
 install.packages('KernSmooth')
 ```
+For czi atlas envs:
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
 
+BiocManager::install("batchelor")
+```
 
 ### R environments
 
