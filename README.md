@@ -153,6 +153,9 @@ For the installation of`Conos`, please see [the Conos github repo](https://githu
 
 For czi atlas envs:
 ```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
 BiocManager::install("batchelor")
 ```
 
