@@ -3,15 +3,10 @@ channels:
   - conda-forge
   - bioconda
   - anaconda 
-  - pytorch
 dependencies:
   - python
   - pip
   - snakemake>=5
-  - pytorch 
-  - torchvision 
-  - torchaudio 
-  - cudatoolkit=10.2
   - networkx
   - icu
   - GraphViz
