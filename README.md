@@ -137,6 +137,16 @@ Additional Git install
 pip install git+https://github.com/theislab/LATAQ.git
 ```
 
+GPU pytorch:
+```
+mamba install pytorch=1.11.0=py3.8_cuda10.2_cudnn7.6.5_0  -c pytorch
+```
+Check that GPU is availiable with:
+```
+import torch
+torch.cuda.is_available()
+```
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
