@@ -11,7 +11,7 @@ dependencies:
   - pytorch 
   - torchvision 
   - torchaudio 
-  - cudatoolkit==10.2
+  - cudatoolkit=10.2
   - networkx
   - icu
   - GraphViz
