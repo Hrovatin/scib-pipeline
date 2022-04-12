@@ -1,0 +1,38 @@
+ROOT: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/scib/ # Scib root
+r_env : scib-R # Can put just anything as we wont use it
+py_env : scib-pipeline # Env for metrics
+
+timing: false # false
+unintegrated_metrics: false # false
+
+FEATURE_SELECTION:
+  hvg: 2000 # We use 2000
+
+SCALING:
+  - unscaled # Lets use only unscaled
+
+METHODS:
+# Method names: same as in integration generation, others can be left unchanged
+# python methods
+  bbknn:
+    output_type: knn
+  scanorama:
+    output_type: embed
+  scANVI:
+    output_type: embed
+  scGEN:
+    output_type: embed
+  scVI:
+    output_type: embed
+  lataq:
+    output_type: embed
+# R methods
+# TODO correct - currently does not work, maybe problem of test data?
+  #harmony:
+    #output_type: embed
+
+DATA_SCENARIOS:
+  mock_scib: # Name of folder within ROOT for the project/dataset
+    batch_key: batch
+    label_key: celltype
+    file: /lustre/groups/ml01/code/karin.hrovatin/scib-pipeline/data/adata_norm.h5ad # Original data, same as used for preparing preprocessed data for integration
