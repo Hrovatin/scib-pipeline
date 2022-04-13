@@ -14,7 +14,6 @@ RESULT_TYPES = [
     "embed",  # embedded/latent space
     "knn"  # only corrected neighbourhood graph as output
 ]
-ASSAYS = ["expression", "atac", "simulation"]
 
 if __name__ == '__main__':
     """
@@ -33,11 +32,8 @@ if __name__ == '__main__':
 
     parser.add_argument('-b', '--batch_key', required=True, help='Key of batch')
     parser.add_argument('-l', '--label_key', required=True, help='Key of annotated labels e.g. "cell_type"')
-
-    parser.add_argument('--organism', required=True)
     parser.add_argument('--type', required=True, choices=RESULT_TYPES,
                         help='Type of result: full, embed, knn\n full: scanorama, seurat, MNN\n embed: scanorama, Harmony\n knn: BBKNN')
-    parser.add_argument('--assay', default='expression', choices=ASSAYS, help='Experimental assay')
     parser.add_argument('--hvgs', default=0,
                         help='Number of highly variable genes. Use 0 to specify that no feature selection had been used.',
                         type=int)
@@ -49,8 +45,6 @@ if __name__ == '__main__':
     type_ = args.type
     batch_key = args.batch_key
     label_key = args.label_key
-    assay = args.assay
-    organism = args.organism
     n_hvgs = args.hvgs if args.hvgs > 0 else None
 
     # encode setup for column name
@@ -65,8 +59,6 @@ if __name__ == '__main__':
         print(f'    type:\t{type_}')
         print(f'    batch_key:\t{batch_key}')
         print(f'    label_key:\t{label_key}')
-        print(f'    assay:\t{assay}')
-        print(f'    organism:\t{organism}')
         print(f'    n_hvgs:\t{n_hvgs}')
         print(f'    setup:\t{setup}')
         print(f'    optimised clustering results:\t{cluster_nmi}')
@@ -171,13 +163,13 @@ if __name__ == '__main__':
     # DEFAULT
     silhouette_ = True
     nmi_ = True
-    ari_ = True
+    ari_ = False
     pcr_ = True
-    cell_cycle_ = True
+    cell_cycle_ = False
     isolated_labels_ = True
-    hvg_score_ = True
+    hvg_score_ = False
     graph_conn_ = True
-    kBET_ = True
+    kBET_ = False
     # lisi_ = True
     lisi_graph_ = True
 
@@ -190,13 +182,6 @@ if __name__ == '__main__':
         cell_cycle_ = False
         hvg_score_ = False
         # lisi_ = False
-
-    # by assay
-    if args.assay == 'atac':
-        cell_cycle_ = False
-        hvg_score_ = False
-    elif args.assay == 'simulation':
-        cell_cycle_ = False
 
     # check if pseudotime data exists in original data
     if 'dpt_pseudotime' in adata.obs:
@@ -253,7 +238,7 @@ if __name__ == '__main__':
         ari_=ari_,
         pcr_=pcr_,
         cell_cycle_=cell_cycle_,
-        organism=organism,
+        organism="human",
         isolated_labels_=isolated_labels_,
         n_isolated=None,
         graph_conn_=graph_conn_,
