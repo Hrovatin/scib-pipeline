@@ -33,6 +33,9 @@ export R_LIBS_OLD
 #export R_LIBS="${CONDA_PREFIX}/lib/R/library/"
 export R_LIBS=""
 
+PYTHONPATH_OLD=$PYTHONPATH
+unset PYTHONPATH
+
 # +
 # unset user R libs
 #R_LIBS_USER_OLD=$R_LIBS_USER
