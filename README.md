@@ -1,3 +1,4 @@
+<!-- #region -->
 # Pipeline for benchmarking atlas-level single-cell integration
 
 This repository contains the snakemake pipeline for our benchmarking study for data integration tools.
@@ -119,6 +120,34 @@ Rscript -e "devtools::install_github('theislab/kBET')"
 ```
 Make sure you have rpy2==3.4.2
 
+If Seurat can not be loaded in R run again 
+```
+install.packages('KernSmooth')
+```
+For czi atlas envs:
+In R:
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("batchelor")
+```
+Additional Git install
+
+```
+pip install git+https://github.com/theislab/LATAQ.git
+```
+
+GPU pytorch:
+```
+mamba install pytorch=1.11.0=py3.8_cuda10.2_cudnn7.6.5_0  -c pytorch
+```
+Check that GPU is availiable with:
+```
+import torch
+torch.cuda.is_available()
+```
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
@@ -136,7 +165,7 @@ conda deactivate
 . envs/set_vars.sh $conda_prefix
 ```
 
-Activate the environment and install the packages all the R dependencies in R directly or use the script `install_R_methods.R`.
+Activate the environment and install the packages all the R dependencies in R directly or use the script `install_R_methods.R`. - UNUSED in out czi atlas envs - instead manually install in R below:
 
 ```commandline
 conda activate <r-environment>
@@ -145,7 +174,16 @@ Rscript envs/install_R_methods.R
 
 For the installation of`Conos`, please see [the Conos github repo](https://github.com/hms-dbmi/conos).
 
+For czi atlas envs:
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("batchelor")
+```
+
 We used these conda versions of the R integration methods in our study:
+
 
 ```
 harmony_1.0
@@ -222,3 +260,4 @@ Tools that are compared include:
 - [DESC](https://github.com/eleozzr/desc)
 - [LIGER](https://github.com/MacoskoLab/liger)
 - [SAUCIE](https://github.com/KrishnaswamyLab/SAUCIE)
+<!-- #endregion -->

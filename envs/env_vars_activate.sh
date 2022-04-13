@@ -5,7 +5,7 @@ CFLAGS_OLD=$CFLAGS
 export CFLAGS_OLD
 CFLAGS="$(gsl-config --cflags) ${CFLAGS_OLD}"
 export CFLAGS
- 
+
 LDFLAGS_OLD=$LDFLAGS
 export LDFLAGS_OLD
 LDFLAGS="$(gsl-config --libs) ${LDFLAGS_OLD}"
@@ -30,4 +30,11 @@ export R_HOME=${CONDA_PREFIX}/lib/R
 # unset system R libs
 R_LIBS_OLD=$R_LIBS
 export R_LIBS_OLD
+#export R_LIBS="${CONDA_PREFIX}/lib/R/library/"
 export R_LIBS=""
+
+# +
+# unset user R libs
+#R_LIBS_USER_OLD=$R_LIBS_USER
+#export R_LIBS_USER_OLD
+#export R_LIBS_USER="${CONDA_PREFIX}/lib/R/library/"
