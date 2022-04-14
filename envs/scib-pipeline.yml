@@ -7,6 +7,7 @@ dependencies:
   - python
   - pip
   - snakemake>=5
+  - seml
   - networkx
   - icu
   - GraphViz
