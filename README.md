@@ -147,6 +147,11 @@ import torch
 torch.cuda.is_available()
 ```
 
+Configure seml
+
+```
+seml configure
+```
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
