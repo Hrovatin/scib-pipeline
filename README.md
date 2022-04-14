@@ -141,6 +141,10 @@ GPU pytorch:
 ```
 mamba install pytorch=1.11.0=py3.8_cuda10.2_cudnn7.6.5_0  -c pytorch
 ```
+For JSC_HIDA supercomputer:
+```
+mamba install pytorch=1.11.0=py3.8_cuda11.3_cudnn8.2.0_0  -c pytorch
+```
 Check that GPU is availiable with:
 ```
 import torch
