@@ -152,6 +152,9 @@ Configure seml
 ```
 seml configure
 ```
+
+Make sure R reticulate is version 1.22
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
