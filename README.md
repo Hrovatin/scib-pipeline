@@ -159,6 +159,8 @@ seml configure
 
 Make sure R reticulate is version 1.22
 
+Make sure rpy2 is version 3.4.2. If not run `pip install --upgrade rpy2==3.4.2`.
+
 ### R environments
 
 | YAML file location            | Environment name     | Description                                                                                           |
