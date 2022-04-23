@@ -4,6 +4,7 @@ py_env : scib-pipeline # Env for metrics
 
 timing: false # false
 unintegrated_metrics: false # false
+# Config for combining metrics of all scenarios
 
 FEATURE_SELECTION:
   hvg: 2000 # We use 2000
@@ -14,10 +15,11 @@ SCALING:
 METHODS:
 # Method names: same as in integration generation, others can be left unchanged
 # python methods
-  bbknn_br0:
-    output_type: knn
-  bbknn_br1:
-    output_type: knn
+# TODO - bbknn metrics did not run through
+  #bbknn_br0:
+  #  output_type: knn
+  #bbknn_br1:
+  #  output_type: knn
   scanorama:
     output_type: embed
   scANVI_snh128_sdgene-batch:
@@ -48,7 +50,13 @@ METHODS:
     #output_type: embed
 
 DATA_SCENARIOS:
+
   scib_benchmark_blood: # Name of folder within ROOT for the project/dataset
     batch_key: batch_czi 
     label_key: cell_type_for_integration
     file: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/blood/benchmark_healthy_data_blood_norm.h5ad # Original data, same as used for preparing preprocessed data for integration
+
+  scib_benchmark_kidney: # Name of folder within ROOT for the project/dataset
+    batch_key: batch_czi 
+    label_key: cell_type_for_integration
+    file: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/kidney/benchmark_healthy_data_kidney_norm.h5ad # Original data, same as used for preparing preprocessed data for integration

@@ -48,7 +48,7 @@ METHODS:
     #output_type: embed
 
 DATA_SCENARIOS:
-  scib_benchmark_blood: # Name of folder within ROOT for the project/dataset
+  scib_benchmark_kidney: # Name of folder within ROOT for the project/dataset
     batch_key: batch_czi 
     label_key: cell_type_for_integration
-    file: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/blood/benchmark_healthy_data_blood_norm.h5ad # Original data, same as used for preparing preprocessed data for integration
+    file: /lustre/groups/ml01/workspace/lisa.sikkema/czi_tissue_references/data/kidney/benchmark_healthy_data_kidney_norm.h5ad # Original data, same as used for preparing preprocessed data for integration
