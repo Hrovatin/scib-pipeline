@@ -28,6 +28,8 @@ METHODS:
     output_type: embed
   scANVI_snh256_sdgene:
     output_type: embed
+  scANVI_snh128_sdgene_sols0:
+    output_type: embed
   scVI_snh128_sdgene-batch:
     output_type: embed
   scVI_snh128_sdgene:
@@ -36,10 +38,12 @@ METHODS:
     output_type: embed
   scVI_snh256_sdgene:
     output_type: embed
+  scVI_snh128_sdgene_sols0:
+    output_type: embed
   #scGEN:
   #  output_type: embed
-  #lataq_ls0:
-  #  output_type: embed
+  lataq_ls0:
+    output_type: embed
   #lataq_ls1:
   #  output_type: embed
 # R methods

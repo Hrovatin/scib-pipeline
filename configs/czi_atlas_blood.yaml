@@ -14,10 +14,10 @@ SCALING:
 METHODS:
 # Method names: same as in integration generation, others can be left unchanged
 # python methods
-  bbknn_br0:
-    output_type: knn
-  bbknn_br1:
-    output_type: knn
+  #bbknn_br0:
+  #  output_type: knn
+  #bbknn_br1:
+  #  output_type: knn
   scanorama:
     output_type: embed
   scANVI_snh128_sdgene-batch:
